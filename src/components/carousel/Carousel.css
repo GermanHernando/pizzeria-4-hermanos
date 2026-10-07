@@ -1,0 +1,128 @@
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.carousel-grid {
+  display: grid;
+  gap: 1.2rem;
+  flex: 1;
+  min-width: 0; /* evita que el grid empuje el ancho del flex container */
+  width: 100%;
+}
+
+.carousel-flecha {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(61, 46, 34, 0.15);
+  background-color: var(--crema);
+  color: var(--verde-pino);
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+}
+
+.carousel-flecha:hover {
+  background-color: var(--verde-pino);
+  color: var(--crema);
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: -1.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.4rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(61, 46, 34, 0.2);
+  cursor: pointer;
+  padding: 0;
+}
+
+.dot.activo {
+  background-color: var(--verde-pino);
+}
+
+.categoria-bloque {
+  padding: 3.5rem 1.5rem;
+  border-top: 1px solid var(--dorado);
+  position: relative;
+  scroll-margin-top: 100px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.categoria-bloque:first-child {
+  border-top: none;
+}
+
+/* El filete dorado tiene un pequeño rombo centrado, como un ornamento de carta */
+.categoria-bloque:not(:first-child)::before {
+  content: "◆";
+  position: absolute;
+  top: -0.55rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--crema);
+  color: var(--dorado);
+  font-size: 0.7rem;
+  padding: 0 1rem;
+}
+
+.categoria-encabezado {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  justify-content: center;
+  margin-bottom: 2.2rem;
+}
+
+.categoria-monograma {
+  font-family: 'Lobster', cursive;
+  font-weight: 400;
+  font-size: 1.3rem;
+  color: var(--verde-pino);
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--dorado);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.categoria-titulo {
+  font-family: 'Lobster', cursive;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: var(--verde-pino);
+  margin: 0;
+  text-align: left;
+}
+
+.categoria-cantidad {
+  display: block;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--marron);
+  opacity: 0.55;
+  margin-top: 0.15rem;
+}

@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Nunito:wght@400;600;700&display=swap');
+
+:root {
+  --verde-pino: #2F5233;
+  --verde-salvia: #6B8E5A;
+  --crema: #F7F4ED;
+  --marron: #3D2E22;
+  --dorado: #C9A227;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--crema);
+  color: var(--marron);
+  font-family: 'Nunito', sans-serif;
+}
+
+
+
+
+

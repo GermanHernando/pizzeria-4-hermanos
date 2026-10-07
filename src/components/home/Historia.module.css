@@ -1,0 +1,32 @@
+.historia {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 2rem;
+  position: relative;
+}
+
+.historia::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #f1ead7 0%, #efe5d2 100%);
+  z-index: -1;
+}
+
+.historia h2 {
+  font-family: 'Lobster', cursive;
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--verde-pino);
+  margin-bottom: 1rem;
+}
+
+.historia p {
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: rgba(61, 46, 34, 0.9);
+}

@@ -1,0 +1,81 @@
+.cart {
+  width: 100%;
+  color: var(--marron);
+  border-top: 3px solid var(--verde-pino);
+  padding-top: 1.5rem;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.cart h2 {
+  font-family: 'Lobster', cursive;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: var(--verde-pino);
+  margin-top: 0;
+}
+
+.cart ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(61, 46, 34, 0.15);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.cart li > button {
+  flex: 0 0 auto;
+}
+
+.cart li button {
+  background: none;
+  border: none;
+  color: var(--verde-pino);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  font-family: inherit;
+}
+
+.cart p {
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: right;
+  margin: 1.1rem 0 0.75rem;
+}
+
+.cart > button {
+  width: 100%;
+  background-color: var(--dorado);
+  color: var(--marron);
+  border: none;
+  padding: 0.9rem;
+  border-radius: 8px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cart > button:hover {
+  background-color: #b8931f;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(201, 162, 39, 0.25);
+}
+
+.cart button:focus-visible {
+  outline: 3px solid var(--verde-salvia);
+  outline-offset: 3px;
+}

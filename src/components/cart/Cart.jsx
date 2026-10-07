@@ -1,0 +1,32 @@
+import styles from './Cart.module.css';
+import { useCart } from '../../context/CartContext.jsx';
+
+const Cart = () => {
+    const { carrito, agregarAlCarrito, descontarDelCarrito, quitarDelCarrito, finalizarPedido } = useCart();
+    const total = carrito.reduce((suma,item) => suma +item.precio*item.cantidad,0);
+
+if(carrito.length === 0){
+    return <h2>El carrito esta vacio</h2>
+}
+
+return (
+    <div className={styles.cart}>
+      <h2>Tu pedido</h2>
+      <ul>
+        {carrito.map((item) => (
+          <li key={item.id}>
+            {item.cantidad}x {item.nombre} — ${item.precio * item.cantidad}
+            <button onClick={() => agregarAlCarrito(item)}>+</button>
+            <button onClick={() => descontarDelCarrito(item.id)}>-</button>
+            <button onClick={() => quitarDelCarrito(item.id)}>Quitar</button>
+          </li>
+        ))}
+      </ul>
+      <p><strong>Total: ${total}</strong></p>
+      <button onClick={finalizarPedido}>Finalizar pedido por WhatsApp</button>
+    </div>
+  );
+}
+
+
+export default Cart;
