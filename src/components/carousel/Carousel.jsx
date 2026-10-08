@@ -3,7 +3,6 @@ import ItemList from '../products/ItemList.jsx';
 import './Carousel.css'
 
 
-// NUEVO: hook que calcula cuántas columnas usar según el ancho de pantalla
 const useColumnasResponsive = (columnasDeseadas) => {
   const [columnas, setColumnas] = useState(columnasDeseadas);
 
@@ -31,7 +30,7 @@ const Carousel = ({ productos, columnas: columnasDeseadas = 3, filas = 1 }) => {
   const [slideActual, setSlideActual] = useState(0);
   const itemsPorSlide = columnas * filas;
 
-  // NUEVO: si cambia la cantidad de columnas, volvemos al primer slide
+  
   useEffect(() => {
     setSlideActual(0);
   }, [columnas]);
