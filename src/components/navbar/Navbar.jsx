@@ -5,7 +5,6 @@ import { useCart } from '../../context/CartContext.jsx';
 const CATEGORIAS_MENU = [
   { nombre: "Promociones", id: "promociones" },
   { nombre: "Pizzas", id: "pizzas" },
-  { nombre: "Sandwiches", id: "sandwiches" },
   { nombre: "Empanadas", id: "empanadas" },
   { nombre: "Calzones", id: "calzones" },
   { nombre: "Pizzas Rellenas", id: "pizzas-rellenas" },

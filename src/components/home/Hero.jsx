@@ -1,13 +1,13 @@
-import heroStyle from './Hero.module.css'
+import style from './Hero.module.css'
 
-const Hero =()=>{
-    return(
-    <section id="inicio" className={heroStyle.hero}>
-      <h1>Pizzeria 4 Hermanos <br /> desde el 2006</h1>
-      <p>Masa madre, ingredientes frescos y el horno de siempre. Elegí tus pizzas y te las mandamos armar el pedido por WhatsApp.</p>
+const Hero = () => {
+  return (
+    <section id="inicio" className={style.hero}>
+      <p className={style.heroKicker}>Desde 2006 · Ituzaingó</p>
+      <h1>Pizzeria 4 Hermanos</h1>
+      <p className={style.heroTexto}>Pizza recién horneada como en casa.</p>
+      <a href="#menu" className={style.heroCta}>Ver el menú</a>
     </section>
-    );
-
-
+  );
 }
 export default Hero;

@@ -5,7 +5,6 @@ import { useCart } from '../../context/CartContext.jsx';
 const EMOJI_POR_CATEGORIA = {
   "Promociones": "🎉",
   "Pizzas": "🍕",
-  "Sandwiches": "🥪",
   "Empanadas": "🥟",
   "Calzone": "🥐",
   "Pizzas Rellenas": "🍕",

@@ -47,9 +47,10 @@
   border-radius: 14px;
   overflow: hidden;
   background-color: var(--crema);
- box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .menu-item-imagen {
