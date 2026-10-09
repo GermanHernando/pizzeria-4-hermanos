@@ -10,10 +10,11 @@ const Layout = ({ children }) => {
     <div className="layout">
       <Header/>
       <Hero/>
-      <Historia/>
+      
       <main className="content">
         {children}
       </main>
+      <Historia/>
       <Contacto/>
       <Footer />
     </div>

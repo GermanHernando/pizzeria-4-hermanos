@@ -24,7 +24,7 @@ return (
     <span className={style.marca}>Pizzería 4 Hermanos</span>
     <ul className={style.navbarLinks}>
         <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#historia">Nosotros</a></li>
+        
        
        <li className={style.menuDropdownWrapper}>
           <button className={style.menuDropdownBoton} onClick={abrirMenu}>
@@ -44,7 +44,7 @@ return (
 
 
 
-
+        <li><a href="#historia">Nosotros</a></li>
         <li><a href="#contacto">Contacto</a></li>
     </ul>
         <a
