@@ -49,27 +49,33 @@ const Carousel = ({ productos, columnas: columnasDeseadas = 3, filas = 1 }) => {
   };
 
   const estiloGrilla = {
-    gridTemplateColumns: `repeat(${columnas}, 1fr)`,
-    gridTemplateRows: `repeat(${filasEfectivas}, auto)`,
+    gridTemplateColumns: `repeat(${columnas}, minmax(0, 1fr))`,
+    gridTemplateRows: `repeat(${filasEfectivas}, 1fr)`,
   };
 
   return (
     <div className="carousel">
-      {totalSlides > 1 && (
-        <button className="carousel-flecha izq" onClick={irAAnterior} aria-label="Anterior">
-          ‹
-        </button>
-      )}
+    <button
+  className="carousel-flecha izq"
+  onClick={irAAnterior}
+  aria-label="Anterior"
+  style={{ visibility: totalSlides > 1 ? 'visible' : 'hidden' }}
+>
+  ‹
+</button>
 
-      <div className="carousel-grid" style={estiloGrilla}>
-        <ItemList productos={slides[slideActual]} />
-      </div>
+<div className="carousel-grid" style={estiloGrilla}>
+  <ItemList productos={slides[slideActual]} />
+</div>
 
-      {totalSlides > 1 && (
-        <button className="carousel-flecha der" onClick={irASiguiente} aria-label="Siguiente">
-          ›
-        </button>
-      )}
+<button
+  className="carousel-flecha der"
+  onClick={irASiguiente}
+  aria-label="Siguiente"
+  style={{ visibility: totalSlides > 1 ? 'visible' : 'hidden' }}
+>
+  ›
+</button>
 
       {totalSlides > 1 && (
         <div className="carousel-dots">

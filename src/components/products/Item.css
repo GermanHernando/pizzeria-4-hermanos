@@ -80,18 +80,29 @@
 }
 
 .menu-item-nombre {
-  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  overflow: hidden;
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.3;
+  min-height: 2.6em;
 }
 
 .menu-item-descripcion {
   margin: 0.3rem 0 0;
   font-size: 0.9rem;
+  line-height: 1.4;
   color: var(--marron);
   opacity: 0.75;
-  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  overflow: hidden;
+  min-height: 4.2em; /*siempre reserva 3 lineas*/
 }
 
 .menu-item-footer {
@@ -135,7 +146,7 @@
   }
 
   .menu-item-imagen {
-    aspect-ratio: 16 / 10; /* antes 4/3: menos alto */
+    aspect-ratio: 16 / 10; 
   }
 
   .menu-item-placeholder {
@@ -152,10 +163,11 @@
 
   .menu-item-descripcion {
     font-size: 0.75rem;
-    -webkit-line-clamp: 2; /* antes 3 */
+    -webkit-line-clamp: 2; 
+    line-clamp: 2;
+    min-height: 2.8em; /* reserva 2 líneas */
   }
 
-  /* Precio arriba, botón abajo ocupando todo el ancho */
   .menu-item-footer {
     flex-direction: column;
     align-items: stretch;
