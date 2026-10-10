@@ -5,6 +5,10 @@
   padding-top: 1.5rem;
   margin-top: 1rem;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0; /* sin esto, el scroll interno no se activa */
 }
 
 .cart h2 {
@@ -15,26 +19,11 @@
   margin-top: 0;
 }
 
-.menu {
-  display: inline-block;
-  position: center;
-  background: linear-gradient(135deg, #d8ae2f 0%, #f0d778 100%);
-  color: var(--marron);
-  padding: 1rem 2.4rem;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 800;
-  font-size: 1.05rem;
-  letter-spacing: 0.02em;
-  box-shadow: 0 14px 30px rgba(201, 162, 39, 0.35);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.cart-lista {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
 }
-
-.menu:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 36px rgba(201, 162, 39, 0.45);
-}
-
 
 .cart ul {
   list-style: none;
@@ -68,6 +57,22 @@
   font-family: inherit;
 }
 
+.cart-footer {
+  flex-shrink: 0;
+  padding: 0.5rem 0 calc(1rem + env(safe-area-inset-bottom));
+  border-top: 1px solid rgba(61, 46, 34, 0.15);
+}
+
+.cart-footer p {
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: right;
+  margin: 0.8rem 0 0.75rem;
+}
+
+
+
+
 .cart p {
   font-weight: 700;
   font-size: 1.1rem;
@@ -75,7 +80,7 @@
   margin: 1.1rem 0 0.75rem;
 }
 
-.cart > button {
+.cart-footer > button {
   width: 100%;
   background-color: var(--dorado);
   color: var(--marron);
@@ -86,11 +91,10 @@
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  margin-top: 0.5rem;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.cart > button:hover {
+.cart-footer > button:hover {
   background-color: #b8931f;
   transform: translateY(-1px);
   box-shadow: 0 8px 18px rgba(201, 162, 39, 0.25);
@@ -99,4 +103,24 @@
 .cart button:focus-visible {
   outline: 3px solid var(--verde-salvia);
   outline-offset: 3px;
+}
+
+.menu {
+  display: inline-block;
+  align-self: center;
+  background: linear-gradient(135deg, #d8ae2f 0%, #f0d778 100%);
+  color: var(--marron);
+  padding: 1rem 2.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 14px 30px rgba(201, 162, 39, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(201, 162, 39, 0.45);
 }

@@ -7,10 +7,10 @@ const Cart = () => {
 
 if (carrito.length === 0) {
     return (
-      <>
+      <div className={styles.cart}>
         <h2>El carrito esta vacio</h2>
         <a href="#menu" className={styles.menu} onClick={cerrarCarrito}>Ver el menú</a>
-      </>
+      </div>
     );
 }
 
@@ -18,7 +18,7 @@ return (
     <div className={styles.cart}>
       <h2>Tu pedido</h2>
 
-      <div className="cart-lista">
+      <div className={styles['cart-lista']}>
         <ul>
         {carrito.map((item) => (
           <li key={item.id}>
@@ -31,7 +31,7 @@ return (
         </ul>
       </div>
 
-       <div className="cart-footer">
+       <div className={styles['cart-footer']}>
       <p><strong>Total: ${total}</strong></p>
       <button onClick={finalizarPedido}>Finalizar pedido por WhatsApp</button>
       </div>
