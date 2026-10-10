@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import style from './Navbar.module.css';
 import { useCart } from '../../context/CartContext.jsx';
@@ -17,12 +17,27 @@ const Navbar = () => {
   const cantidadTotal = carrito.reduce((total, item) => total + item.cantidad, 0);
   const [menuAbierto, setMenuAbierto] = useState(false);
   const [navAbierto, setNavAbierto] = useState(false);
+  const menuRef = useRef(null);
 
   const abrirMenu = () => setMenuAbierto((prev) => !prev);
   const cerrarTodo = () => {
     setMenuAbierto(false);
     setNavAbierto(false);
   };
+
+  useEffect(() => {
+    const cerrarMenuAlHacerClickAfuera = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuAbierto(false);
+      }
+    };
+    document.addEventListener('click', cerrarMenuAlHacerClickAfuera);
+    return () => {
+      document.removeEventListener('click', cerrarMenuAlHacerClickAfuera);
+    };
+  }, []);
+
+  
 
   return (
     <nav className={style.navbar}>
@@ -36,12 +51,12 @@ const Navbar = () => {
         {navAbierto ? <X size={24} /> : <Menu size={24} />}
       </button>
 
+
       <ul className={`${style.navbarLinks} ${navAbierto ? style.abierto : ''}`}>
         <li><a href="#inicio" onClick={cerrarTodo}>Inicio</a></li>
 
-        <li className={style.menuDropdownWrapper}>
-          <button className={style.menuDropdownBoton} onClick={abrirMenu}>
-            Menú {menuAbierto ? '▲' : '▼'}
+        <li className={style.menuDropdownWrapper} ref={menuRef}>
+          <button className={style.menuDropdownBoton} onClick={abrirMenu}>Menú {menuAbierto ? '▲' : '▼'}
           </button>
 
           {menuAbierto && (
