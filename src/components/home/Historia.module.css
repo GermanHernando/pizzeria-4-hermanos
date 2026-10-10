@@ -9,11 +9,17 @@
   content: "";
   position: absolute;
   top: 0;
-  bottom: 0;
+  bottom: -1px;
   left: 50%;
   width: 100vw;
   transform: translateX(-50%);
-background: linear-gradient(180deg, #f7f4ed 0%, #ece0c4 100%);
+  background: linear-gradient(
+    180deg,
+    #f7f4ed 0%,
+    #ece0c4 28%,
+    #ece0c4 72%,
+    #f7f4ed 100%
+  );
   z-index: -1;
 }
 
