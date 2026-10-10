@@ -9,7 +9,7 @@
       rgba(47, 82, 51, 0.45) 70%,
       rgba(47, 82, 51, 0.15) 100%
     ),
-    url("../../assets/hero.jpg") center/cover no-repeat;
+    url("../../assets/hero.jpg") center/cover  no-repeat;
   color: var(--crema);
   text-align: center;
   padding: 5rem 1.5rem;
