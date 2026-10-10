@@ -126,3 +126,19 @@
   opacity: 0.55;
   margin-top: 0.15rem;
 }
+
+@media (max-width: 480px) {
+  .carousel {
+    gap: 0.3rem;
+  }
+
+  .carousel-flecha {
+    width: 28px;
+    height: 28px;
+    font-size: 1.1rem;
+  }
+
+  .categoria-bloque {
+    padding: 2.5rem 0.8rem;
+  }
+}

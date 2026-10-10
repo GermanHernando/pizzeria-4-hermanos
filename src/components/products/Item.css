@@ -128,3 +128,47 @@
   transform: translateY(-1px);
   box-shadow: 0 14px 20px rgba(47, 82, 51, 0.2);
 }
+
+@media (max-width: 480px) {
+  .menu-item {
+    border-radius: 10px;
+  }
+
+  .menu-item-imagen {
+    aspect-ratio: 16 / 10; /* antes 4/3: menos alto */
+  }
+
+  .menu-item-placeholder {
+    font-size: 2rem;
+  }
+
+  .menu-item-info {
+    padding: 0.6rem;
+  }
+
+  .menu-item-nombre {
+    font-size: 0.85rem;
+  }
+
+  .menu-item-descripcion {
+    font-size: 0.75rem;
+    -webkit-line-clamp: 2; /* antes 3 */
+  }
+
+  /* Precio arriba, botón abajo ocupando todo el ancho */
+  .menu-item-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.4rem;
+  }
+
+  .menu-item-precio {
+    font-size: 0.9rem;
+  }
+
+  .btn-agregar {
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 0.8rem;
+  }
+}

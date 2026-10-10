@@ -2,15 +2,13 @@ import { useState, useEffect } from 'react';
 import ItemList from '../products/ItemList.jsx';
 import './Carousel.css'
 
-
 const useColumnasResponsive = (columnasDeseadas) => {
   const [columnas, setColumnas] = useState(columnasDeseadas);
 
   useEffect(() => {
     const calcular = () => {
       const ancho = window.innerWidth;
-      if (ancho < 480) return 1;
-      if (ancho < 768) return 2;
+      if (ancho < 768) return 2;                              // celular y tablet chica: 2 columnas
       if (ancho < 1024) return Math.min(3, columnasDeseadas);
       return columnasDeseadas;
     };
@@ -26,11 +24,11 @@ const useColumnasResponsive = (columnasDeseadas) => {
 };
 
 const Carousel = ({ productos, columnas: columnasDeseadas = 3, filas = 1 }) => {
-  const columnas = useColumnasResponsive(columnasDeseadas); // NUEVO
+  const columnas = useColumnasResponsive(columnasDeseadas);
+  const filasEfectivas = columnas <= 2 ? 2 : filas;   // en celular: 2 columnas x 2 filas = 4 por slide
   const [slideActual, setSlideActual] = useState(0);
-  const itemsPorSlide = columnas * filas;
+  const itemsPorSlide = columnas * filasEfectivas;
 
-  
   useEffect(() => {
     setSlideActual(0);
   }, [columnas]);
@@ -51,8 +49,8 @@ const Carousel = ({ productos, columnas: columnasDeseadas = 3, filas = 1 }) => {
   };
 
   const estiloGrilla = {
-    gridTemplateColumns: `repeat(${columnas},1fr)`,
-    gridTemplateRows: `repeat(${filas},auto)`,
+    gridTemplateColumns: `repeat(${columnas}, 1fr)`,
+    gridTemplateRows: `repeat(${filasEfectivas}, auto)`,
   };
 
   return (

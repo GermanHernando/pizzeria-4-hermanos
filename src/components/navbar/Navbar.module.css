@@ -140,28 +140,59 @@
   background-color: rgba(47, 82, 51, 0.08);
 }
 
-@media (max-width: 640px) {
+.hamburguesa {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--verde-pino);
+  cursor: pointer;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
   .navbar {
-    width: min(100%, calc(100% - 12px));
     flex-wrap: wrap;
-    justify-content: center;
-    padding: 0.9rem 0.85rem;
-    border-radius: 0 0 18px 18px;
+    gap: 0.6rem;
+    padding: 0.8rem 1rem;
   }
 
-  .navbarLinks {
-    width: 100%;
-    gap: 0.6rem 0.9rem;
+  .marca {
+    font-size: 1.25rem;
+    margin-right: auto;
   }
 
-  .navbarLinks a {
-    font-size: 0.68rem;
-    letter-spacing: 0.06em;
+  .hamburguesa {
+    display: flex;
+    order: 2;
   }
 
   .navbarCart {
+    order: 1;
+    padding: 0.5rem 0.9rem;
+  }
+
+  .navbarLinks {
+    display: none;
+    order: 3;
     width: 100%;
-    max-width: 200px;
-    padding: 0.72rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.9rem;
+    padding: 0.8rem 0 0.4rem;
+    border-top: 1px solid rgba(61, 46, 34, 0.12);
+  }
+
+  .navbarLinks.abierto {
+    display: flex;
+  }
+
+  /* El dropdown de categorías se despliega dentro del panel, no flotando */
+  .menuDropdown {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    padding: 0.4rem 0 0 0.8rem;
+    min-width: 0;
   }
 }
