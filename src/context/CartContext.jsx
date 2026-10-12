@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState , useRef} from 'react';
 
 export const CartContext = createContext(null);
 export const useCart = () => useContext(CartContext);
@@ -17,7 +17,21 @@ export const CartProvider = ({ children }) => {
     localStorage.setItem('carrito', JSON.stringify(carrito));
   }, [carrito]);
 
-  const agregarAlCarrito = (producto) => {
+  const [aviso, setAviso] = useState(null);
+  const timeoutRef = useRef(null);
+
+  const mostrarAviso = (texto) => {
+    setAviso({ texto, id: Date.now() });
+    clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => setAviso(null), 2000);
+  };
+
+  useEffect(() => {
+    return () => clearTimeout(timeoutRef.current);
+    }, []);
+
+
+  const agregarAlCarrito = (producto, mostrarToast = true) => {
     setCarrito((prevCarrito) => {
       const yaExiste = prevCarrito.find((item) => item.id === producto.id);
       if (yaExiste) {
@@ -27,9 +41,11 @@ export const CartProvider = ({ children }) => {
             : item
         );
       }
-
       return [...prevCarrito, { ...producto, cantidad: 1 }];
     });
+    if (mostrarToast) {
+      mostrarAviso("Agregado al carrito");
+    }
   };
 
   const descontarDelCarrito = (id) => {
@@ -88,10 +104,10 @@ export const CartProvider = ({ children }) => {
         carritoAbierto,
         abrirCarrito,
         cerrarCarrito,
+        aviso
       }}
     >
       {children}
     </CartContext.Provider>
   );
 };
-

@@ -23,7 +23,7 @@ return (
         {carrito.map((item) => (
           <li key={item.id}>
             {item.cantidad}x {item.nombre} — ${item.precio * item.cantidad}
-            <button onClick={() => agregarAlCarrito(item)}>+</button>
+            <button onClick={() => agregarAlCarrito(item, false)}>+</button>
             <button onClick={() => descontarDelCarrito(item.id)}>-</button>
             <button onClick={() => quitarDelCarrito(item.id)}>Quitar</button>
           </li>
