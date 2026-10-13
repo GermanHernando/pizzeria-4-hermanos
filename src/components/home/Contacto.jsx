@@ -9,7 +9,7 @@ const Contacto = () => {
 
   return (
     <section id="contacto" className={contactoStyle.contacto}>
-      <div className={contactoStyle.card}>
+      <div className={contactoStyle.card} data-reveal="zoom">
         <div className={contactoStyle.contenido}>
           <p className={contactoStyle.kicker}>Visitanos</p>
           <h2 className={contactoStyle.titulo}>

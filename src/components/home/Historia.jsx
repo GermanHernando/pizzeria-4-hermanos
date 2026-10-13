@@ -8,7 +8,7 @@ const Historia = () => {
   return (
     <section id="historia" className={style.historia}>
       <div className={style.historiaLayout}>
-        <div className={style.historiaTexto}>
+        <div className={style.historiaTexto}data-reveal="izquierda">
           <h2>Nuestra historia</h2>
           <p>
             Todo empezó en 2006, cuando los cuatro hermanos Gaspón decidieron abrir 
@@ -22,7 +22,7 @@ const Historia = () => {
           </p>
         </div>
 
-        <div className={style.historiaImagen}>
+        <div className={style.historiaImagen} data-reveal="girar" style={{ '--delay': '0.2s' }}>
           {fotoHistoria ? (
             <img src={fotoHistoria} alt="El horno de Pizzería 4 Hermanos" />
           ) : (

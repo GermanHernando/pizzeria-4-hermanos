@@ -54,7 +54,7 @@ const Carousel = ({ productos, columnas: columnasDeseadas = 3, filas = 1 }) => {
   };
 
   return (
-    <div className="carousel">
+    <div className="carousel" data-reveal="zoom">
     <button
   className="carousel-flecha izq"
   onClick={irAAnterior}
@@ -64,7 +64,7 @@ const Carousel = ({ productos, columnas: columnasDeseadas = 3, filas = 1 }) => {
   ‹
 </button>
 
-<div className="carousel-grid" style={estiloGrilla}>
+<div className="carousel-grid" style={estiloGrilla} >
   <ItemList productos={slides[slideActual]} />
 </div>
 

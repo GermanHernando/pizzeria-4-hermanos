@@ -100,7 +100,7 @@ const ItemListContainer = () => {
         return (
           <div key={nombreCategoria} 
           id={slugify(nombreCategoria)} className="categoria-bloque">
-            <div className="categoria-encabezado">
+            <div className="categoria-encabezado" data-reveal="izquierda">
               <span className="categoria-monograma">{nombreCategoria.charAt(0)}</span>
               <div>
                 <h3 className="categoria-titulo">{nombreCategoria}</h3>
