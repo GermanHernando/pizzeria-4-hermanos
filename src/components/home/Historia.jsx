@@ -1,10 +1,8 @@
 import style from './Historia.module.css'
-// Cuando tengas la foto real, descomentá esta línea:
-// import fotoHistoria from '../../assets/historia.jpg';
+import fotoHistoria from '../../assets/logo-historia.jpeg';
 
 const Historia = () => {
-  const fotoHistoria = null; // reemplazar por el import de arriba cuando tengas la imagen
-
+  
   return (
     <section id="historia" className={style.historia}>
       <div className={style.historiaLayout}>
@@ -23,13 +21,7 @@ const Historia = () => {
         </div>
 
         <div className={style.historiaImagen} data-reveal="girar" style={{ '--delay': '0.2s' }}>
-          {fotoHistoria ? (
-            <img src={fotoHistoria} alt="El horno de Pizzería 4 Hermanos" />
-          ) : (
-            <div className={style.historiaPlaceholder}>
-              <span>🍕</span>
-            </div>
-          )}
+            <img src={fotoHistoria} alt="El logo de Pizzería 4 Hermanos" />
         </div>
       </div>
     </section>
