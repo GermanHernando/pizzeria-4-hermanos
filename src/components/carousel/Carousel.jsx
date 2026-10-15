@@ -8,7 +8,8 @@ const useColumnasResponsive = (columnasDeseadas) => {
   useEffect(() => {
     const calcular = () => {
       const ancho = window.innerWidth;
-      if (ancho < 768) return 2;                              // celular y tablet chica: 2 columnas
+      if (ancho < 480) return 1;            // celular: 1 columna (tarjeta horizontal)
+      if (ancho < 768) return 2;
       if (ancho < 1024) return Math.min(3, columnasDeseadas);
       return columnasDeseadas;
     };
@@ -25,7 +26,7 @@ const useColumnasResponsive = (columnasDeseadas) => {
 
 const Carousel = ({ productos, columnas: columnasDeseadas = 3, filas = 1 }) => {
   const columnas = useColumnasResponsive(columnasDeseadas);
-  const filasEfectivas = columnas <= 2 ? 2 : filas;   // en celular: 2 columnas x 2 filas = 4 por slide
+  const filasEfectivas = columnas === 1 ? 4 : columnas === 2 ? 2 : filas;  // en celular: 2 columnas x 2 filas = 4 por slide
   const [slideActual, setSlideActual] = useState(0);
   const itemsPorSlide = columnas * filasEfectivas;
 
