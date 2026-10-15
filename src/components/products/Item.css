@@ -153,7 +153,7 @@
   }
 
   .menu-item-imagen {
-    aspect-ratio: 16 / 10; 
+    aspect-ratio: 4/5; 
   }
 
   .menu-item-placeholder {
@@ -161,7 +161,7 @@
   }
 
   .menu-item-info {
-    padding: 0.6rem;
+    padding: 0.5rem;
   }
 
   .menu-item-nombre {
@@ -172,7 +172,7 @@
     font-size: 0.75rem;
     -webkit-line-clamp: 2; 
     line-clamp: 2;
-    min-height: 2.8em; /* reserva 2 líneas */
+    min-height: 1.4em; /* reserva 2 líneas */
   }
 
   .menu-item-footer {
