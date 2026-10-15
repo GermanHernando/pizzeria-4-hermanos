@@ -1,4 +1,10 @@
 import Carousel from "../carousel/Carousel";
+import promoMuzzarella from "../../assets/products/promociones/promo-muzza2.png";
+import promoMuzzarellaEmpanadas from "../../assets/products/promociones/promo-muzza-6empanadas.png";
+import promoMuzzarellaNapolitana from "../../assets/products/promociones/promo-muzza-napo.png";
+import promoMuzzarellaJamonMorron from "../../assets/products/promociones/promo-muzza-jamon-morron.png";
+import promoMuzzarellaJamonFugazza from "../../assets/products/promociones/promo-muzza-jamon-fugazza.png";
+import promoEmpanadas from "../../assets/products/promociones/promo-empanadas.jpg";
 import mozzarella from "../../assets/products/pizzas/muzzarella.jpg";
 import anchoas from "../../assets/products/pizzas/anchoas.jpg";
 import primavera from "../../assets/products/pizzas/primavera.jpg";
@@ -15,7 +21,6 @@ import palmitosJamon from "../../assets/products/pizzas/palmitos-jamon.jpg";
 import especialPalmitos from "../../assets/products/pizzas/especial-palmitos.jpg";
 import roquefort from "../../assets/products/pizzas/roquefort.jpg";
 import provolone from "../../assets/products/pizzas/provolone.jpg";
-import panceta from "../../assets/products/pizzas/panceta.jpg";
 import tresQuesos from "../../assets/products/pizzas/tres-quesos.webp";
 import anchoasConMozzarella from "../../assets/products/pizzas/anchoas-mozzarella.jpg";
 import calabresa from "../../assets/products/empanadas/calabresa.jpg";
@@ -48,12 +53,12 @@ import sandwichIndividual from "../../assets/products/adicionales/sandwich-indiv
 const ItemListContainer = () => {
   const productos = [
     // PROMOCIONES
-    { id: 1, nombre: " 2 Pizzas de Muzzarella", categoria: "Promociones", descripcion: "Dos pizzas de muzzarella clásica.", precio: 24000, cantidad: 0 },
-    { id: 2, nombre: " Muzzarella + 6 empanadas", categoria: "Promociones", descripcion: "1 pizza muzzarella y 6 empanadas a elección.", precio: 24000, cantidad: 0 },
-    { id: 3, nombre: " Muzzarella + Napolitana o Jamón", categoria: "Promociones", descripcion: "1 pizza muzzarella y 1 pizza napolitana o de jamón.", precio: 26000, cantidad: 0 },
-    { id: 4, nombre: " Muzzarella + Jamón y Morrón", categoria: "Promociones", descripcion: "1 pizza muzzarella y 1 pizza de jamón y morrón.", precio: 28000, cantidad: 0 },
-    { id: 5, nombre: " Muzzarella + Jamón + Fugazza c/muzzarella", categoria: "Promociones", descripcion: "1 pizza muzzarella, 1 pizza jamón y 1 fugazza con muzzarella.", precio: 37000, cantidad: 0 },
-    { id: 28, nombre: "Docena de empanadas (+2 de regalo)", categoria: "Promociones", descripcion: "12 empanadas a elección + 2 de regalo.", precio: 25000, cantidad: 0 },
+    { id: 1, nombre: " 2 Pizzas de Muzzarella", categoria: "Promociones", descripcion: "Dos pizzas de muzzarella clásica.", precio: 24000, cantidad: 0, imagen: promoMuzzarella },
+    { id: 2, nombre: " Muzzarella + 6 empanadas", categoria: "Promociones", descripcion: "1 pizza muzzarella y 6 empanadas a elección.", precio: 24000, cantidad: 0, imagen: promoMuzzarellaEmpanadas },
+    { id: 3, nombre: " Muzzarella + Napolitana o Jamón", categoria: "Promociones", descripcion: "1 pizza muzzarella y 1 pizza napolitana o de jamón.", precio: 26000, cantidad: 0, imagen: promoMuzzarellaNapolitana },
+    { id: 4, nombre: " Muzzarella + Jamón y Morrón", categoria: "Promociones", descripcion: "1 pizza muzzarella y 1 pizza de jamón y morrón.", precio: 28000, cantidad: 0, imagen: promoMuzzarellaJamonMorron },
+    { id: 5, nombre: " Muzzarella + Jamón + Fugazza c/muzzarella", categoria: "Promociones", descripcion: "1 pizza muzzarella, 1 pizza jamón y 1 fugazza con muzzarella.", precio: 37000, cantidad: 0, imagen: promoMuzzarellaJamonFugazza },
+    { id: 28, nombre: "Docena de empanadas (+2 de regalo)", categoria: "Promociones", descripcion: "12 empanadas a elección + 2 de regalo.", precio: 25000, cantidad: 0, imagen: promoEmpanadas },
 
     // PIZZAS
     { id: 6, nombre: "Muzzarella", categoria: "Pizzas", descripcion: "Salsa de tomate y mozzarella.", precio: 13000, cantidad: 0, imagen: mozzarella },
