@@ -75,9 +75,6 @@
   display: block;
 }
 
-.menu-item-placeholder {
-  font-size: 3rem;
-}
 
 .menu-item-info {
   padding: 1rem;
@@ -155,22 +152,20 @@
 
   /* Imagen a la izquierda, de alto completo */
   .menu-item-imagen {
-    width: 108px;
-    min-height: 108px;
+    width: 96px;
+    min-height: 96px;
     aspect-ratio: auto;
     align-self: stretch;
     flex-shrink: 0;
   }
 
-  .menu-item-placeholder {
-    font-size: 2.2rem;
-  }
+
 
   /* Texto a la derecha */
   .menu-item-info {
     flex: 1;
     min-width: 0;
-    padding: 0.7rem 0.8rem;
+    padding: 0.6rem 0.7rem;
     justify-content: space-between;
   }
 
@@ -189,11 +184,9 @@
 
   /* Precio a la izquierda, botón a la derecha */
   .menu-item-footer {
-    flex-direction: row;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 0.5rem;
-    margin-top: auto;
   }
 
   .menu-item-precio {
@@ -201,8 +194,10 @@
   }
 
   .btn-agregar {
+    flex-shrink: 0;
+    white-space: nowrap;
     width: auto;
-    padding: 0.4rem 1rem;
+    padding: 0.4rem rem;
     font-size: 0.8rem;
   }
 }

@@ -1,16 +1,6 @@
 import './Item.css';
 import { useCart } from '../../context/CartContext.jsx';
 
-//Una vez que tenga las imágenes, sacar junto con su css
-const EMOJI_POR_CATEGORIA = {
-  "Promociones": "🎉",
-  "Pizzas": "🍕",
-  "Empanadas": "🥟",
-  "Calzone": "🥐",
-  "Pizzas Rellenas": "🍕",
-  "Bebidas": "🥤",
-  "Otros": "🧀",
-};
 
 const Item = ({ id, nombre, descripcion, precio, categoria, imagen }) => {
   const { agregarAlCarrito } = useCart();
@@ -18,13 +8,7 @@ const Item = ({ id, nombre, descripcion, precio, categoria, imagen }) => {
   return (
     <div className="menu-item">
       <div className="menu-item-imagen">
-        {imagen ? (
           <img src={imagen} alt={nombre} />
-        ) : (
-          <span className="menu-item-placeholder">
-            {EMOJI_POR_CATEGORIA[categoria] || "🍽️"}
-          </span>
-        )}
       </div>
 
       <div className="menu-item-info">
