@@ -1,6 +1,6 @@
 import contactoStyle from './Contacto.module.css'
 import { MapPin, Phone, Clock } from 'lucide-react'
-import fotoContacto from '../../assets/pizza-contacto.jpg'
+import fotoContacto from '../../assets/pizza-contacto.webp'
 
 const Contacto = () => {
   const direccion = "Alvear 1393, Ituzaingó, Buenos Aires";

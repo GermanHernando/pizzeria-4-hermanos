@@ -1,5 +1,5 @@
 import style from './Historia.module.css'
-import fotoHistoria from '../../assets/logo-historia.jpeg';
+import fotoHistoria from '../../assets/logo-historia.webp';
 
 const Historia = () => {
   
