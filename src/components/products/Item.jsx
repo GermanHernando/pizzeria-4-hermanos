@@ -2,11 +2,11 @@ import './Item.css';
 import { useCart } from '../../context/CartContext.jsx';
 
 
-const Item = ({ id, nombre, descripcion, precio, categoria, imagen }) => {
+const Item = ({ id, nombre, descripcion, precio, imagen }) => {
   const { agregarAlCarrito } = useCart();
 
   return (
-    <div className="menu-item">
+    <div className="menu-item" data-reveal="zoom">
       <div className="menu-item-imagen">
           <img src={imagen} alt={nombre} />
       </div>
