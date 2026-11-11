@@ -4,10 +4,15 @@ import Layout from './components/layouts/Layout.jsx'
 import ItemListContainer from './components/products/ItemListContainer.jsx'
 import CartSidebar from './components/cart/CartSidebar.jsx'
 import Toast from './components/cart/Toast.jsx'
+import Panel from './components/pages/Panel.jsx'
 import './App.css'
 
 function App() {
   useScrollReveal();
+
+  if (window.location.pathname.replace(/\/+$/, '') === '/panel') {
+    return <Panel />;
+  }
 
   return (
     <>
